@@ -1,0 +1,463 @@
+@font-face {
+    font-family: poppins-bold;
+    src: url(../fonts/Poppins-Bold.ttf);
+    font-display: swap;
+}
+.font-poppins-bold {
+    font-family: poppins-bold;
+}
+
+@font-face {
+    font-family: poppins-extrabold;
+    src: url(../fonts/Poppins-ExtraBold.ttf);
+    font-display: swap;
+}
+.font-poppins-extrabold {
+    font-family: poppins-extrabold;
+}
+
+@font-face {
+    font-family: poppins-light;
+    src: url(../fonts/Poppins-Light.ttf);
+    font-display: swap;
+}
+.font-poppins-light {
+    font-family: poppins-light;
+}
+
+@font-face {
+    font-family: poppins-medium;
+    src: url(../fonts/Poppins-Medium.ttf);
+    font-display: swap;
+}
+.font-poppins-medium {
+    font-family: poppins-medium;
+}
+
+@font-face {
+    font-family: poppins-regular;
+    src: url(../fonts/Poppins-Regular.ttf);
+    font-display: swap;
+}
+.font-poppins-regular {
+    font-family: poppins-regular;
+}
+
+/* Color css */
+
+.background-color-blue{
+    background-color: #2e3192 !important;
+}
+
+.color-blue{
+    color: #2e3192 !important;
+}
+.background-color-white{
+    background-color: #fff !important;
+}
+
+.background-color-yellow{
+    background-color: #ffea00 !important;
+}
+
+.color-yellow{
+    color: #ffea00 !important;
+}
+
+.background-color-light-yellow{
+    background-color: #ffee5e !important;
+}
+
+.color-light-yellow{
+    color: #ffee5e !important;
+}
+
+/* center css */
+
+.h-center{
+    left: 50%;
+    transform: translate(-50%,0);
+}
+.v-center{
+    top: 50%;
+    transform: translate(0,-50%);
+}
+.vh-center{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+/* css for header */
+.top-bar-desktop{
+    background-color: #30def8;
+    height: 40px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff !important;
+    background-color: transparent !important;
+}
+
+.nav-link:hover{
+    color: white !important;
+}
+.shadow-buy-now-button{
+    -webkit-box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.5);
+}
+.shadow-buy-now-button-1{
+    -webkit-box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.3);
+}
+
+
+
+#drawer{
+    -webkit-animation-duration: 0.8s;
+    animation-duration: 0.8s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: slideLeft;
+    animation-name: slideLeft;
+}
+@-webkit-keyframes slideLeft {
+    0% {transform: translate(100%,0px);}
+    100% {transform: translate(0px,0px);}
+}
+@keyframes slideLeft {
+    0% {transform: translate(-100%,0px);}
+    100% {transform: translate(0%,0px);}
+}
+/* @keyframes slideRight {
+    0% {margin-right: -100%;}
+    100% {margin-right: 0%;}
+} */
+#mobile-cross{
+    border-radius: 100px;
+    width: 30px;
+    height: 30px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+/* loader css */
+.element {
+    top: 0px;
+    width: 100px;
+    height: 100px;
+    transform: rotate(360deg);
+    animation: roll1 1s infinite;
+}
+
+@keyframes roll1 {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+#loader {
+    left:0;
+    display:flex;
+    justify-content:center;
+    position:fixed;
+    right:0px;
+    width:100%;
+    height:100%;
+    z-index:10000000;
+    background-color:#2e3192;
+    
+}
+/* .slide{
+    -webkit-animation: slide 8s both;
+    animation: slide 8s both;
+    -webkit-animation-delay: 2s;
+    
+    animation-delay: 2s;
+} */
+
+
+.slide{
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: slidetop;
+    animation-name: slidetop;
+}
+@-webkit-keyframes slidetop {
+    0% {transform: translate(0px,0px);}
+    100% {transform: translate(0%,-150%);}
+}
+@keyframes slidetop {
+    0% {transform: translate(0px,0px);}
+    100% {transform: translate(0%,-150%);}
+}
+
+@-webkit-keyframes slide {
+    100% {
+        top:-100%;
+    }
+}
+
+@keyframes slide {
+    100% {
+        top:-100%;
+    }
+}
+
+.loader-image-container{
+    top:50%;
+    position:absolute;
+    width:100px;
+    height:100px;
+    transform:translate(0,-50%);
+}
+/* for large desktops */
+@media (max-width: 700px) {
+    .loader-image-container{
+        width:150px;
+        height:150px;
+        
+    }
+    .element {
+        
+        width: 150px;
+        height: 150px;
+        
+    }
+}
+
+/* add to cart message mobile */
+
+.slideIn{
+    -webkit-animation-duration: 1.3s;
+    animation-duration: 1.3s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-name: slideIn;
+    animation-name: slideIn;
+}
+@-webkit-keyframes slideIn {
+    
+    100% {left: 0%;}
+}
+@keyframes slideIn {
+    
+    100% {left: 0%;}
+}
+
+.slideOut{
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-name: slideOut;
+    animation-name: slideOut;
+}
+@-webkit-keyframes slideOut {
+    100% {left: -110%;}
+}
+@keyframes slideOut {
+    100% {left: -110%;}
+}
+
+/* ripple on buttons */
+/* Ripple effect */
+/* Ripple magic */
+/* .effect{
+    position: relative;
+    overflow: hidden;
+    margin :10px;
+  }
+  
+  .effect:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, .5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+  }
+  
+  @keyframes ripple {
+    0% {
+      transform: scale(0, 0);
+      opacity: 1;
+    }
+    20% {
+      transform: scale(25, 25);
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(40, 40);
+    }
+  }
+  
+  .effect:focus:not(:active)::after {
+    animation: ripple 1s ease-out;
+  } */
+
+  /*Create ripple effec*/
+
+.ripple {
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+}
+
+.ripple:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform .5s, opacity 1s;
+}
+
+.ripple:active:after {
+    transform: scale(0, 0);
+    opacity: .3;
+    transition: 0s;
+}
+
+a{
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+}
+a:after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform .5s, opacity 1s;
+    cursor: pointer;
+}
+a:active:after {
+    transform: scale(0, 0);
+    opacity: .3;
+    transition: 0s;
+}
+
+button{
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+    cursor: pointer;
+}
+button:after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform .5s, opacity 1s;
+}
+button:active:after {
+    transform: scale(0, 0);
+    opacity: .3;
+    transition: 0s;
+}
+
+/* image zoom */
+* {box-sizing: border-box;}
+
+.img-zoom-container {
+    position: relative;
+}
+
+.img-zoom-lens {
+    position: absolute;
+    /* border: 1px solid #d4d4d4; */
+    /*set the size of the lens:*/
+    width: 300px;
+    height: 300px;
+}
+
+.img-zoom-result {
+    border: 2px solid black;
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    right: -79%;
+    top: 20px;
+    border-radius: 20px;
+    z-index: 50;
+    display: none;
+}
+
+.cart-button:hover{
+    background-color: #ffea00 !important;
+}
+
+/* tabs css of product pages */
+#myTab{
+    border-color: #9b9ca0;
+}
+#myTab a{
+    font-family: poppins-bold;
+}
+#myTab a:hover{
+    color: black !important;
+    cursor: pointer !important;
+    border-color: #9b9ca0;
+    text-decoration: underline;
+}
+#myTab .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #ff0000;
+    background-color: #ffea00;
+    border-color: #5b5c5f #5b5c5f #5b5c5f;
+}
+#myTab .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active:hover {
+    border-color: #5b5c5f #5b5c5f #5b5c5f !important;
+}
+#myTab .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link{
+    
+    border-color: #9b9ca0 #9b9ca0 #9b9ca0;
+}

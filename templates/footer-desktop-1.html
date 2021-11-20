@@ -1,0 +1,245 @@
+
+
+<div id="footer-desktop" class="mt-5 pt-5">
+    <div class="position-relative">
+        <h2 class="position-absolute w-100 font-poppins-regular m-0 text-center text-uppercase" style="font-size: 102px; top: -88px; color: black;">That's All Folks</h2>
+        <div style="background-color: black; border-top-left-radius: 30px; border-top-right-radius: 30px;">
+            <div style="width: 850px; margin: 0 auto;">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-6 pt-4 pb-2">
+                            <div class="d-flex justify-content-center align-items-center mt-5 cursor-pointer" onclick="window.location = '/'">
+                                <img src="../icons/white_logo.svg" style="width: 38px;">
+                                <h1 class="w-100 font-poppins-bold m-0 text-center text-uppercase text-white" style="font-size: 30px;" >The Top Controller</h1>
+                            </div>
+                            <p class="w-100 font-poppins-regular m-0 text-left text-uppercase text-white pt-4" style="font-size: 14px;">Founded in 2016, TheTopControler has helped trendy shoppers
+                            personalize and protect millions of consumer electronic
+                            devices with removable full-color skins, cases and sleeves.<br>
+                            <br>
+                            ©2020 TheTopController®, a registered trademark of TTC LLC. 
+                            Made with Love in the USA!</h1>
+                            <div class="d-flex ml-2 mt-3 pb-5">
+                                <img src="../images/facebook-white.png" class="cursor-pointer" onclick="window.open('https://www.facebook.com/top.contoller/', '_blank');">
+                                <img src="../images/instagram-white.png" class="cursor-pointer ml-3" onclick="window.open('https://www.instagram.com/top.controller/', '_blank');" >                 
+                            </div>       
+                        </div>
+                        <div class="col-3 pt-4 pb-2">
+                            <h4 class="w-100 font-poppins-bold m-0 text-left text-uppercase text-white mt-3 pt-5" style="font-size: 16px;">Get Help</h3>
+                            <h4 class="w-100 font-poppins-regular m-0 mt-3 text-left text-uppercase text-white cursor-pointer" style="font-size: 16px;" onclick="window.location = '../pages/contact-us'">Contact us</h4>
+                            <h4 class="w-100 font-poppins-regular m-0 text-left text-uppercase text-white mt-2 cursor-pointer" style="font-size: 16px;" onclick="window.location = '../pages/contact-us'">Support Center</h4>
+                            <h4 class="w-100 font-poppins-regular m-0 text-left text-uppercase text-white mt-2 cursor-pointer" style="font-size: 16px;" onclick="window.location = '../pages/installation'">Install Tips/Videos</h4>
+                            <h4 class="w-100 font-poppins-regular m-0 text-left text-uppercase text-white mt-2 cursor-pointer" style="font-size: 16px;" onclick="window.location = '../pages/shipping'">Shipping Help</h4>
+                            
+                            <h4 class="w-100 font-poppins-regular m-0 text-left text-uppercase text-white mt-2 cursor-pointer" style="font-size: 16px;" onclick="window.location = '../pages/returns'">return an item</h4>
+                        </div>
+                        <div class="col-3 pt-4 pb-2">
+                            <h4 class="w-100 font-poppins-bold m-0 text-left text-uppercase text-white mt-3 pt-5" style="font-size: 16px;">About Us</h3>
+                            <h4 class="w-100 font-poppins-regular m-0 text-left text-uppercase text-white mt-2 cursor-pointer" style="font-size: 16px;" onclick="window.location = '../pages/privacy-policy'">Privacy policy</h4>
+                            <h4 class="w-100 font-poppins-regular m-0 text-left text-uppercase text-white mt-2 cursor-pointer" style="font-size: 16px;" onclick="window.location = '../pages/cookies-policy'">Cookies Policy</h4>
+                            <h4 class="w-100 font-poppins-regular m-0 text-left text-uppercase text-white mt-2 cursor-pointer" style="font-size: 16px;" onclick="window.location = '../pages/terms'">terms of use</h4>
+                        </div>
+                    </div>
+                </div>                        
+            </div>
+        </div>
+    </div>            
+</div>
+
+
+<script type="text/javascript">
+    //code for both desktop and mobile
+    //smooth scroll button desktop
+    $(document).ready(function(){
+        // Add smooth scrolling to all links
+        $("a").on('click', function(event) {
+
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+            // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                if($(hash).offset()){
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 1000, function(){
+                        
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                }
+                
+            } // End if
+        });
+    });
+
+    // top bar desktop movement
+    $(function () {
+        var lastScrollTop = 0;
+        var $navbar = $('.top-bar-desktop');
+        var navbarHeight = $navbar.outerHeight();
+        var movement = 0;
+        var lastDirection = 0;
+        $(window).scroll(function (event) {
+            var st = $(this).scrollTop();
+            movement += st - lastScrollTop;
+            if (st > lastScrollTop) {
+                // scroll down
+                if (lastDirection != 1) {
+                    movement = 0;
+                }
+                var margin = Math.abs(movement);
+                if (margin > navbarHeight) {
+                    margin = navbarHeight;
+                }
+                margin = -margin;
+                $navbar.css('margin-top', margin + "px")
+                lastDirection = 1;
+                //$("#header-image").addClass('transition-header-image');
+            } 
+            else { 
+                // scroll up
+                if (lastDirection != -1) {
+                    movement = 0;
+                }
+                var margin = Math.abs(movement);
+                if (margin > navbarHeight) {
+                    margin = navbarHeight;
+                }
+                margin = margin - navbarHeight;
+                $navbar.css('margin-top', margin + "px")
+                lastDirection = -1;
+            }
+            lastScrollTop = st;
+            // console.log(margin);
+        });
+    });	
+
+
+    // cookies get set and erase code
+    function setCookie(name,value,days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days*24*60*60*1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+        // console.log( name + "=" + (value || "")  + expires + "; path=/");
+    }
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+    }
+    function eraseCookie(name) {   
+        document.cookie = name+'=; Max-Age=-99999999;';  
+    }
+
+    // time functions
+    function time_remaining(endtime) {
+        var t = Date.parse(endtime) - Date.parse(new Date());
+        var seconds = Math.floor((t / 1000) % 60);
+        var minutes = Math.floor((t / 1000 / 60) % 60);
+        var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+        var days = Math.floor(t / (1000 * 60 * 60 * 24));
+        return { 'total': t, 'days': days, 'hours': hours, 'minutes': minutes, 'seconds': seconds };
+    }
+    function run_clock(id, endtime) {
+        // console.log('endtime',endtime);
+        setCookie('countDown',endtime,1);
+        var clock = document.getElementById(id);
+        function update_clock() {
+            var t = time_remaining(endtime);
+            var seconds = t.seconds;
+            if (String(t.seconds).length == 1){
+                seconds = '0' + t.seconds;
+            }
+            clock.innerHTML = '0' + t.minutes + ':' + seconds;
+            // console.log('t before',t);
+            // console.log('json',JSON.stringify(t));
+            
+            // console.log('t after',t);
+            if (t.total <= 0) { 
+                setCookie('timeOver','true',7);
+                clearInterval(timeinterval); 
+            }
+        }
+        update_clock(); // run function once at first to avoid delay
+        var timeinterval = setInterval(update_clock, 1000);
+    }
+
+    // countdown timer desktop
+    // 10 minutes from now
+    var time_in_minutes = 9.99;
+    var current_time = Date.parse(new Date());
+    var deadline = new Date(current_time + time_in_minutes * 60 * 1000);
+    // console.log('deadline1' , deadline);
+
+    //check if a variable of countDown is present in the cookies
+    var countDown = getCookie('countDown');
+    var timeOver = getCookie('timeOver');
+    // console.log('countdown',countDown);
+    // eraseCookie('countDown');
+    if(countDown != null){
+        // console.log(time_remaining(countDown).total);
+        if(time_remaining(countDown).total>=0){
+            deadline = countDown;
+            // console.log('deadline', countDown);
+        }
+        
+    }
+    if(timeOver ==null){
+        if(document.getElementById('counter-1') != null){
+            run_clock('counter-1', deadline);
+        }
+        if(document.getElementById('counter-2') != null){
+            run_clock('counter-2', deadline);
+        }
+        if(document.getElementById('counter-3') != null){
+            run_clock('counter-3', deadline);
+        }
+        if(document.getElementById('counter-4') != null){
+            run_clock('counter-4', deadline);
+        }
+        if(document.getElementById('counter-5') != null){
+            run_clock('counter-5', deadline);
+        }
+    } else{
+        if(document.getElementById('counter-1') != null){
+            document.getElementById('counter-1').innerHTML = '00:00';
+        }
+        if(document.getElementById('counter-2') != null){
+            document.getElementById('counter-2').innerHTML = '00:00';
+        }
+        if(document.getElementById('counter-3') != null){
+            document.getElementById('counter-3').innerHTML = '00:00';
+        }
+        if(document.getElementById('counter-4') != null){
+            document.getElementById('counter-4').innerHTML = '00:00';
+        }
+        if(document.getElementById('counter-5') != null){
+            document.getElementById('counter-5').innerHTML = '00:00';
+        }
+    }
+
+    
+    var cart1 = JSON.parse(getCookie('cart'));
+    if (cart1 == null || typeof(cart1[0]) === 'undefined'){
+        $("#cart-message-desktop").html('1');
+    } else{
+        $("#cart-message-desktop").html(String(cart1.length));
+    }
+    
+
+
+</script>

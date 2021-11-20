@@ -1,0 +1,10 @@
+<svg id="Group_3504" data-name="Group 3504" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="162.703" height="155.637" viewBox="0 0 162.703 155.637">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#4b09c0"/>
+      <stop offset="1" stop-color="#fa21fd"/>
+    </linearGradient>
+  </defs>
+  <path id="Subtraction_2" data-name="Subtraction 2" d="M48.14,155.637l0,0A81.4,81.4,0,1,1,162.7,81.35v.118a85.93,85.93,0,0,0-28.712-4.9c-44.538,0-82.248,34.73-85.85,79.066Z" transform="translate(0 0)" fill="url(#linear-gradient)"/>
+  <path id="Subtraction_4" data-name="Subtraction 4" d="M0,71.152v-.007A81.445,81.445,0,0,1,104.249,3.451L.006,71.148Z" transform="translate(54.862 82.945)" fill="url(#linear-gradient)"/>
+</svg>

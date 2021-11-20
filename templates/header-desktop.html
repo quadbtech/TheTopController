@@ -1,0 +1,104 @@
+<header>
+    <div style="background-color: #2e3192; z-index: 50;" class="fixed-top">
+        <div class="top-bar-desktop d-flex justify-content-center align-items-center">
+            <h3 class="m-0 font-poppins-light" style="font-size: 22px;">An Exclusive Coupon of <span class="font-weight-bold">5$</span> Has been Applied Valid Until <span class="font-weight-bold" id="counter-1">10:00</span></h3>
+        </div>
+        <nav id="navbar-example2" class="navbar navbar-dark w-100 justify-content-center" style="background-color: #2e3192;">
+            <img src="icons/yellow_logo.svg" style="width: 40px; margin-right: 5px;">
+            <a class="navbar-brand font-poppins-bold" style="font-size: 30px; color:#ffea00; margin-right: 150px;" href="#">The Top Controller</a>
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link font-poppins-bold" style="font-size: 16px; color: #ffea00;" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link font-poppins-bold" style="font-size: 16px; color: #ffea00;" href="#services">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link font-poppins-bold" style="font-size: 16px; color: #ffea00;" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link font-poppins-bold" style="font-size: 16px; color: #ffea00;" href="#designs">Designs</a>
+                </li>
+                <li class="nav-item d-flex justify-content-center align-items-center">
+                    <a class="nav-link font-poppins-bold text-uppercase shadow-buy-now-button" style="font-size: 16px; background-color: #ffea00; color: #fc1e1e; border-radius: 100px; padding-top: 5px; padding-bottom: 5px;" href="">Buy Now</a>
+                </li>                        
+            </ul>
+        </nav>
+    </div>      
+</header>
+
+<script type="text/javascript">
+    // top bar desktop movement
+    $(function () {
+        var lastScrollTop = 0;
+        var $navbar = $('.top-bar-desktop');
+        var navbarHeight = $navbar.outerHeight();
+        var movement = 0;
+        var lastDirection = 0;
+        $(window).scroll(function (event) {
+            var st = $(this).scrollTop();
+            movement += st - lastScrollTop;
+            if (st > lastScrollTop) {
+                // scroll down
+                if (lastDirection != 1) {
+                    movement = 0;
+                }
+                var margin = Math.abs(movement);
+                if (margin > navbarHeight) {
+                    margin = navbarHeight;
+                }
+                margin = -margin;
+                $navbar.css('margin-top', margin + "px")
+                lastDirection = 1;
+                //$("#header-image").addClass('transition-header-image');
+            } 
+            else { 
+                // scroll up
+                if (lastDirection != -1) {
+                    movement = 0;
+                }
+                var margin = Math.abs(movement);
+                if (margin > navbarHeight) {
+                    margin = navbarHeight;
+                }
+                margin = margin - navbarHeight;
+                $navbar.css('margin-top', margin + "px")
+                lastDirection = -1;
+            }
+            lastScrollTop = st;
+            // console.log(margin);
+        });
+    });	
+
+    // countdown timer desktop
+    // 10 minutes from now
+    var time_in_minutes = 9.99;
+    var current_time = Date.parse(new Date());
+    var deadline = new Date(current_time + time_in_minutes * 60 * 1000);
+
+
+    function time_remaining_header(endtime) {
+        var t = Date.parse(endtime) - Date.parse(new Date());
+        var seconds = Math.floor((t / 1000) % 60);
+        var minutes = Math.floor((t / 1000 / 60) % 60);
+        var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+        var days = Math.floor(t / (1000 * 60 * 60 * 24));
+        return { 'total': t, 'days': days, 'hours': hours, 'minutes': minutes, 'seconds': seconds };
+    }
+    function run_clock_header(id, endtime) {
+        var clock = document.getElementById(id);
+        function update_clock_header() {
+            var t = time_remaining_header(endtime);
+            var seconds = t.seconds;
+            if (String(t.seconds).length == 1){
+                seconds = '0' + t.seconds;
+            }
+            clock.innerHTML = '0' + t.minutes + ':' + seconds;
+            if (t.total <= 0) { clearInterval(timeinterval); }
+        }
+        update_clock_header(); // run function once at first to avoid delay
+        var timeinterval = setInterval(update_clock_header, 1000);
+    }
+    run_clock_header('counter-1', deadline);
+
+</script>
